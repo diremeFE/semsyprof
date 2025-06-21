@@ -20,7 +20,7 @@
 
         {{-- Imagen --}}
         <div>
-            <img src="{{ asset('images/servicios/renting-venta-bloque1.jpg') }}" alt="Venta directa"
+            <img src="{{ asset('images/servicios/renting-venta-bloque1 (3).png') }}" alt="Venta directa"
                 class="rounded-xl w-full object-cover">
         </div>
     </div>

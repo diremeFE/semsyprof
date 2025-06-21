@@ -18,7 +18,7 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative w-full h-[90vh] overflow-hidden">
+    <section class="relative w-full h-[60vh] overflow-hidden">
         <img src="{{ asset('images/hero-inicio.png') }}" alt="Tecnología estética"
             class="absolute inset-0 w-full h-full object-cover z-0">
     </section>
@@ -110,21 +110,22 @@
                     </div>
                 </div>
 
-                {{-- Cifras destacadas --}}
                 <div class="flex space-x-10 text-center">
                     <div>
-                        <p class="text-2xl font-bold">120+</p>
+                        <p class="text-2xl font-bold count-up" data-target="120">0</p>
                         <p class="text-sm text-gray-600">Clientes</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-bold">20+</p>
+                        <p class="text-2xl font-bold count-up" data-target="20">0</p>
                         <p class="text-sm text-gray-600">Años</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-bold">3.000+</p>
+                        <p class="text-2xl font-bold count-up" data-target="3000" data-step="500">0</p>
                         <p class="text-sm text-gray-600">Tratamientos</p>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </section>
@@ -212,6 +213,48 @@
             </div>
         </div>
     </section>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll('.count-up');
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const step = +counter.getAttribute('data-step') || 1;
+            const duration = 1500;
+            const stepsCount = Math.ceil(target / step);
+            const stepTime = Math.max(Math.floor(duration / stepsCount), 10);
+            let current = 0;
+
+            const increment = () => {
+                current += step;
+                if (current >= target) {
+                    counter.innerText = target + "+";
+                } else {
+                    counter.innerText = current + "+";
+                    setTimeout(increment, stepTime);
+                }
+            };
+
+            increment();
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.6
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+
 
 
 @endsection

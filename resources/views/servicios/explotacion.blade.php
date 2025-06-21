@@ -24,7 +24,7 @@
 
         {{-- Imagen --}}
         <div>
-            <img src="{{ asset('images/explotacion-info.png') }}" alt="Explotación compartida"
+            <img src="{{ asset('images/explo-comp.png') }}" alt="Explotación compartida"
                  class="w-full rounded-xl object-cover">
         </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
         {{-- Imagen --}}
         <div>
-            <img src="{{ asset('images/explotacion-funciona.png') }}" alt="Cómo funciona" class="w-full rounded-xl object-cover">
+            <img src="{{ asset('images/servicios/explotacion-funciona.png') }}" alt="Cómo funciona" class="w-full rounded-xl object-cover">
         </div>
 
         {{-- Texto --}}

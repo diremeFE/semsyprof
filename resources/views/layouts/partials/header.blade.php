@@ -6,21 +6,24 @@
 
     <div class="flex items-center justify-between px-6 py-4 bg-white border-b">
         <div class="flex items-center space-x-3">
-            <img src="{{ asset('images/icons/call.svg') }}" alt="Teléfono" class="w-4 h-4" />
-            <span>+34 690897786</span>
+            <img src="{{ asset('images/icons/call.svg') }}" alt="Teléfono" class="w-6 h-6" />
+            <span class="text-lg">+34 690897786</span>
         </div>
 
         <div class="text-center">
+            <a href="/">
             <img src="{{ asset('images/logo.svg') }}" alt="SemsyProf Logo" class="h-72 mx-auto" />
-        </div>
+        </a>
+    </div>
+
 
         <div class="flex items-center space-x-3">
-            <img src="{{ asset('images/icons/sms.svg') }}" alt="Email" class="w-4 h-4" />
-            <span>contacto@semsyprof.es</span>
+            <img src="{{ asset('images/icons/sms.svg') }}" alt="Email" class="w-6 h-6" />
+            <span class="text-lg">contacto@semsyprof.es</span>
         </div>
     </div>
 
-    <nav class="bg-white py-3 shadow-sm">
+    <nav class="bg-white py-5 shadow-sm">
         <ul class="flex justify-center space-x-8 font-semibold">
             <li>
                 <a href="{{ route('servicios') }}"

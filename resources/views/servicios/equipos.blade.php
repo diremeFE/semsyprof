@@ -21,7 +21,7 @@
 
         {{-- Imagen --}}
         <div>
-            <img src="{{ asset('images/aparatologia-equipo.png') }}" alt="Aparatología médico estética"
+            <img src="{{ asset('images/que-es-aparatologia.png') }}" alt="Aparatología médico estética"
                 class="w-full rounded-lg shadow-md object-cover">
         </div>
     </section>
